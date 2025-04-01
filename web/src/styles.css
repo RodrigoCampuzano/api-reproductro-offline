@@ -1,357 +1,290 @@
+/* Estilos globales */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f5f5f5;
-  }
-  .video-container {
-    position: relative;
-    max-width: 800px;
-    margin: 20px auto;
-    background: #000;
-  }
-  
-  .play-message {
-    position: absolute;
-    bottom: 20px;
-    left: 0;
-    right: 0;
-    text-align: center;
-    color: white;
-    background: rgba(0, 0, 0, 0.7);
-    padding: 10px;
-    font-size: 14px;
-    animation: pulse 2s infinite;
-  }
-  
-  @keyframes pulse {
-    0% { opacity: 0.7; }
-    50% { opacity: 1; }
-    100% { opacity: 0.7; }
-  }
-  
-  video {
-    width: 100%;
-    display: block;
-  }
-  
-  .loading-state {
-    text-align: center;
-    padding: 20px;
-  }
-  
-  .loading-state .spinner {
-    border: 4px solid rgba(0, 0, 0, 0.1);
-    border-radius: 50%;
-    border-top: 4px solid #4285f4;
-    width: 40px;
-    height: 40px;
-    animation: spin 1s linear infinite;
-    margin: 0 auto 10px;
-  }
-  
-  @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-  }
-  
-  .error-state {
-    color: #d32f2f;
-    padding: 20px;
-    background: #ffebee;
-    border-radius: 4px;
-    margin: 20px;
-    text-align: center;
-  }
-  
-  .resume-notice {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    background: rgba(0, 0, 0, 0.7);
-    color: white;
-    padding: 5px 10px;
-    border-radius: 4px;
-    font-size: 14px;
-  }
-  .app {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-  }
-  
-  .home {
-    padding: 20px;
-  }
-  
-  .upload-button {
-    display: inline-block;
-    background-color: #4285f4;
-    color: white;
-    padding: 10px 15px;
-    border-radius: 4px;
-    text-decoration: none;
-    margin-bottom: 20px;
-  }
-  
-  .upload-button:hover {
-    background-color: #3367d6;
-  }
-  
-  .video-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 20px;
-  }
-  
-  .video-card {
-    background: white;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  }
-  
-  .video-card a {
-    text-decoration: none;
-    color: inherit;
-  }
-  
-  .thumbnail-container {
-    position: relative;
-    padding-top: 56.25%; /* 16:9 aspect ratio */
-    background: #000;
-  }
-  
-  .thumbnail-container img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  
-  .duration {
-    position: absolute;
-    bottom: 5px;
-    right: 5px;
-    background: rgba(0,0,0,0.7);
-    color: white;
-    padding: 2px 5px;
-    border-radius: 3px;
-    font-size: 12px;
-  }
-  
-  .video-card h3 {
-    margin: 10px;
-    font-size: 16px;
-  }
-  
-  .video-card p {
-    margin: 0 10px 10px;
-    font-size: 14px;
-    color: #666;
-  }
-  
-  .watch-page {
-    padding: 20px;
-  }
-  
-  .video-container {
-    background: #000;
-    margin-bottom: 20px;
-  }
-  
-  .video-info {
-    background: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  }
-  
-  .upload-page {
-    padding: 20px;
-    max-width: 600px;
-    margin: 0 auto;
-  }
-  
-  .upload-form {
-    background: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  }
-  
-  .form-group {
-    margin-bottom: 15px;
-  }
-  
-  .form-group label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
-  }
-  
-  .form-group input[type="text"],
-  .form-group textarea,
-  .form-group input[type="file"] {
-    width: 100%;
-    padding: 8px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-  }
-  
-  .form-group textarea {
-    min-height: 100px;
-  }
-  
-  button {
-    background-color: #4285f4;
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  button:hover {
-    background-color: #3367d6;
-  }
-  
-  button:disabled {
-    background-color: #cccccc;
-    cursor: not-allowed;
-  }
-  
-  .error {
-    color: #d32f2f;
-    margin-bottom: 15px;
-    padding: 10px;
-    background: #ffebee;
-    border-radius: 4px;
-  }
-  
-  .success {
-    color: #388e3c;
-    margin-bottom: 15px;
-    padding: 10px;
-    background: #e8f5e9;
-    border-radius: 4px;
-  }
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #141414;
+  color: #fff;
+}
 
-  .video-info {
-    margin-top: 20px;
-    padding: 15px;
-    background: #f5f5f5;
-    border-radius: 5px;
-  }
-  
-  .video-info p {
-    margin: 5px 0;
-    color: #666;
-  }
+/* Contenedor general de la aplicación */
+.app {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
 
-  .video-player {
-    max-width: 800px;
-    margin: 0 auto;
-  }
-  
-  .progress-message {
-    margin-top: 10px;
-    padding: 8px;
-    background: #f0f0f0;
-    border-radius: 4px;
-    text-align: center;
-    font-size: 14px;
-  }
+/* Página principal */
+.home {
+  padding: 20px;
+}
 
-  .video-container {
-    max-width: 800px;
-    margin: 20px auto;
-    background: #000;
-    position: relative;
-  }
-  
-  video {
-    width: 100%;
-    display: block;
-  }
-  
-  .loading-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 300px;
-  }
-  
-  .spinner {
-    border: 4px solid rgba(255, 255, 255, 0.3);
-    border-radius: 50%;
-    border-top: 4px solid #4285f4;
-    width: 40px;
-    height: 40px;
-    animation: spin 1s linear infinite;
-    margin-bottom: 10px;
-  }
-  
-  @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-  }
+/* Contenedor de videos (varias definiciones combinadas) */
+.video-container {
+  position: relative;
+  max-width: 900px;
+  margin: 20px auto;
+  background: #000;
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.8);
+}
 
-  .video-container {
-    position: relative;
-    max-width: 800px;
-    margin: 20px auto;
-    background: #000;
-    cursor: pointer;
-  }
-  
-  video {
-    width: 100%;
-    display: block;
-  }
-  
-  .loading-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 300px;
-    color: white;
-  }
-  
-  .spinner {
-    border: 4px solid rgba(255, 255, 255, 0.3);
-    border-radius: 50%;
-    border-top: 4px solid #4285f4;
-    width: 40px;
-    height: 40px;
-    animation: spin 1s linear infinite;
-    margin-bottom: 10px;
-  }
-  
-  .play-message {
-    position: absolute;
-    bottom: 20px;
-    left: 0;
-    right: 0;
-    text-align: center;
-    color: white;
-    background: rgba(0, 0, 0, 0.7);
-    padding: 10px;
-    font-size: 14px;
-    animation: pulse 2s infinite;
-  }
-  
-  @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-  }
-  
-  @keyframes pulse {
-    0% { opacity: 0.7; }
-    50% { opacity: 1; }
-    100% { opacity: 0.7; }
-  }
+video {
+  width: 100%;
+  display: block;
+}
+
+/* Mensaje de reproducción (play-message) */
+.play-message {
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  color: white;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 10px;
+  font-size: 14px;
+  font-weight: bold;
+  animation: pulse 2s infinite;
+  border-radius: 4px;
+}
+
+/* Animación de pulsado */
+@keyframes pulse {
+  0% { opacity: 0.7; }
+  50% { opacity: 1; }
+  100% { opacity: 0.7; }
+}
+
+/* Estados de carga y error */
+.loading-state {
+  text-align: center;
+  padding: 20px;
+}
+
+.loading-state .spinner,
+.spinner {
+  border: 4px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top: 4px solid #e50914; /* Rojo al estilo Netflix */
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+  margin: 0 auto 10px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.error-state,
+.error {
+  color: #d32f2f;
+  padding: 20px;
+  background: #ffebee;
+  border-radius: 4px;
+  margin: 20px;
+  text-align: center;
+}
+
+/* Aviso de reanudación */
+.resume-notice {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+/* Botón de subir */
+.upload-button {
+  display: inline-block;
+  background-color: #e50914;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 4px;
+  text-decoration: none;
+  margin-bottom: 20px;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+.upload-button:hover {
+  background-color: #b20710;
+}
+
+/* Listado de videos */
+.video-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+/* Tarjeta de video */
+.video-card {
+  background: #181818;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s;
+}
+.video-card:hover {
+  transform: scale(1.05);
+}
+.video-card a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Contenedor de miniaturas */
+.thumbnail-container {
+  position: relative;
+  padding-top: 56.25%; /* Relación de aspecto 16:9 */
+  background: #000;
+}
+.thumbnail-container img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px 8px 0 0;
+}
+
+/* Duración en la miniatura */
+.duration {
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 2px 5px;
+  border-radius: 3px;
+  font-size: 12px;
+}
+
+/* Textos de la tarjeta */
+.video-card h3 {
+  margin: 10px;
+  font-size: 16px;
+  font-weight: bold;
+}
+.video-card p {
+  margin: 0 10px 10px;
+  font-size: 14px;
+  color: #b3b3b3;
+}
+
+/* Página de reproducción (watch-page) */
+.watch-page {
+  padding: 20px;
+}
+.video-info {
+  background: #181818;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+  margin-top: 20px;
+}
+.video-info p {
+  margin: 5px 0;
+  color: #b3b3b3;
+}
+
+/* Página de subir videos (upload-page) */
+.upload-page {
+  padding: 20px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+.upload-form {
+  background: #181818;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+/* Grupos del formulario */
+.form-group {
+  margin-bottom: 15px;
+}
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+.form-group input[type="text"],
+.form-group textarea,
+.form-group input[type="file"] {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #333;
+  border-radius: 4px;
+  background: #333;
+  color: white;
+}
+.form-group textarea {
+  min-height: 100px;
+}
+
+/* Botones */
+button {
+  background-color: #e50914;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+button:hover {
+  background-color: #b20710;
+}
+button:disabled {
+  background-color: #555;
+  cursor: not-allowed;
+}
+
+/* Mensaje de éxito */
+.success {
+  color: #388e3c;
+  margin-bottom: 15px;
+  padding: 10px;
+  background: #2e7d32;
+  border-radius: 4px;
+}
+
+/* Contenedor del reproductor de video */
+.video-player {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Mensaje de progreso */
+.progress-message {
+  margin-top: 10px;
+  padding: 8px;
+  background: #333;
+  border-radius: 4px;
+  text-align: center;
+  font-size: 14px;
+}
+
+/* Contenedor de carga para videos con texto en blanco */
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 300px;
+  color: white;
+}

@@ -10,7 +10,7 @@ const VideoPlayer = () => {
   const [userInteracted, setUserInteracted] = useState(false);
   const [hasSetInitialTime, setHasSetInitialTime] = useState(false);
 
-  // Manejar interacción del usuario
+ 
   const handleUserInteraction = () => {
     if (!userInteracted) {
       setUserInteracted(true);
